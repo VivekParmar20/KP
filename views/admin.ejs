@@ -1,0 +1,35 @@
+<%- include('partials/header') %>
+<section id="admin">
+    <h1>Admin Dashboard</h1>
+    <h2>Manage Appointments</h2>
+    <table>
+        <tr>
+            <th>Patient Name</th>
+            <th>Doctor</th>
+            <th>Date</th>
+            <th>Time</th>
+        </tr>
+        <% appointments.forEach(function(appointment) { %>
+            <tr>
+                <td><%= appointment.name %></td>
+                <td><%= appointment.doctor %></td>
+                <td><%= appointment.date %></td>
+                <td><%= appointment.time %></td>
+            </tr>
+        <% }); %>
+    </table>
+    <h2>Manage Doctors</h2>
+    <table>
+        <tr>
+            <th>Doctor Name</th>
+            <th>Specialty</th>
+        </tr>
+        <% doctors.forEach(function(doctor) { %>
+            <tr>
+                <td><%= doctor.name %></td>
+                <td><%= doctor.specialty %></td>
+            </tr>
+        <% }); %>
+    </table>
+</section>
+<%- include('partials/footer') %>

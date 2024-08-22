@@ -1,0 +1,10 @@
+<%- include('partials/header') %>
+
+<section id="success">
+    <h1>Appointment Confirmed</h1>
+    <p>Thank you, <%= appointment.name %>! Your appointment with Dr. <%= appointment.doctor %> on <%= appointment.date %> at <%= appointment.time %> has been successfully booked.</p>
+    <p>You will receive a confirmation email shortly.</p>
+    <a href="/" class="btn">Back to Home</a>
+</section>
+
+<%- include('partials/footer') %>

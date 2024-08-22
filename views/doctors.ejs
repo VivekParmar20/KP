@@ -1,0 +1,93 @@
+<%- include('partials/header') %>
+
+<div class="doctors-section">
+    <h1>Our Doctors</h1>
+    <div class="doctor-container">
+        <div class="doctor-card">
+            <img src="https://static.vecteezy.com/system/resources/previews/019/152/941/original/young-male-doctor-illustration-health-and-medical-service-illustration-free-png.png" alt="Dr. Keval Parmar" class="doctor-image">
+            <div class="doctor-info">
+                <h2>Dr. Keval Parmar</h2>
+                <p><strong>MBBS, M.S. Orthopaedic (Gold Medalist)</strong></p>
+                <p>Graduated from M.S. University, Baroda.</p>
+                <p><strong>Experience:</strong> 10 years in Orthopaedic surgery.</p>
+                <p>Dr. Parmar has successfully performed more than <strong>100,000 trauma surgeries</strong>, over <strong>500 replacement surgeries</strong>, and more than <strong>50 arthroscopy surgeries</strong>. His dedication and expertise in orthopaedics have made him a leading specialist in the field.</p>
+            </div>
+        </div>
+
+        <div class="doctor-card">
+            <img src="https://cdn2.vectorstock.com/i/1000x1000/38/16/smiling-female-doctor-vector-7733816.jpg" alt="Dr. Poma Shah" class="doctor-image">
+            <div class="doctor-info">
+                <h2>Dr. Poma Shah</h2>
+                <p><strong>MBBS, M.D. Medicine</strong></p>
+                <p>Graduated from M.S. University, Baroda. Fellowship in 2D Echocardiography from CIMS Hospital, Ahmedabad.</p>
+                <p><strong>Experience:</strong> 10 years in medical and critical care.</p>
+                <p>Dr. Shah has treated over <strong>5,000 patients</strong>, including those requiring critical care. Her extensive experience and specialization in echocardiography ensure high-quality care for patients with various medical conditions.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer') %>
+
+<style>
+.doctors-section {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.doctor-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.doctor-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #faeeee;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 800px;
+    width: 100%;
+    padding: 20px;
+}
+
+.doctor-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.doctor-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.doctor-card:hover .doctor-image {
+    transform: scale(1.05);
+}
+
+.doctor-info {
+    text-align: left;
+}
+
+.doctor-info h2 {
+    margin: 0;
+    color: #007bff;
+}
+
+.doctor-info p {
+    margin: 10px 0;
+    color: #333;
+}
+
+.doctor-info strong {
+    color: #007bff;
+}
+</style>

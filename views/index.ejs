@@ -1,0 +1,170 @@
+<%- include('partials/header') %>
+
+<div id="heroCarousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="/images/img-4.jpeg" class="d-block w-100" alt="Hospital Image 1">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Comfortable Patient Care</h5>
+          <p>Ensuring a pleasant stay with our top-tier amenities.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="/images/img-2.jpeg" class="d-block w-100" alt="Hospital Image 2">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Expert Medical Team</h5>
+          <p>General And Private AC Rooms</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="/images/img-1.jpeg" class="d-block w-100" alt="Hospital Image 3">
+        <div class="carousel-caption d-none d-md-block">
+            <h5>State-of-the-Art Facilities</h5>
+            <p>Providing top-notch care with the latest technology.</p>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#heroCarousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#heroCarousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+</div>
+
+  
+    
+
+<div class="about-us-section" id ="v">
+    <h2>About Us</h2>
+    <div class="about-us-content">
+        <img src="/images/img-3.jpeg" alt="Hospital Image" class="about-us-image">
+        <div class="about-us-text">
+            <h3>Welcome to KP Hospital</h3>
+            <p>KP Hospital is a NABH certified healthcare facility, proudly offering 25 beds, including a dedicated 4-bedded ICU, located in the heart of Bhavnagar. Our prime location and state-of-the-art facilities ensure that we provide top-notch care in a comfortable environment.</p>
+            <p>We are committed to delivering excellence in healthcare with a focus on patient-centered care. Our team of highly skilled professionals is dedicated to providing comprehensive medical services and ensuring the highest quality of care for every patient.</p>
+            <p>At KP Hospital, we believe in making healthcare accessible and effective. Whether you require specialized treatment or routine medical services, our modern facility is equipped to meet all your needs with precision and compassion.</p>
+        </div>
+    </div>
+</div>
+
+<div class="features-section">
+    <h2>Our Facilities</h2>
+    <div class="card-container">
+        <div class="card">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjDen5qW3zNGO_XdJ0ytNQwJlq0wWtwfZtlLJ-CmmWt_AFz3cHv25mBmMNn8rJy81XtDdctvzdh1P1zBylM6_oLM5fq7qNK-Ergd2mt2TfIge3ZUAzQx515t4HQlbAODxZnnAvL0k3ExJg/s1600/1.jpg" alt="NABH Certification">
+            <div class="card-content">
+                <h3>NABH Certified</h3>
+                <p>Our hospital meets the highest standards of quality and safety as per NABH certification.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://www.streehospital.com/wp-content/uploads/2022/03/Cashless-Facility-Hospital.jpg">
+            <div class="card-content">
+                <h3>Cashless Facility</h3>
+                <p>Enjoy a hassle-free experience with our cashless treatment options.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://civilhospitalahd.gujarat.gov.in/writereaddata/images/mukhyamantri-amrutam-yojana.jpg" alt="MA Card Facility">
+            <div class="card-content">
+                <h3>MA Card Facility</h3>
+                <p>If you're eligible, enjoy the convenience of our MA Card scheme, offering flexible and hassle-free payment options. This benefit is designed to make healthcare more accessible. Check your eligibility and take advantage of this opportunity if you qualify!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="facilities-section">
+    <h2>Our Services</h2>
+    <div class="card-container">
+        <div class="card">
+            <img src="/images/img-1.jpeg" alt="Facility 1">
+            <div class="card-content">
+                <h3>State-of-the-Art Equipment</h3>
+                <p>We use the latest technology and equipment to ensure accurate diagnostics and effective treatments.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="/images/img-2.jpeg" alt="Facility 2">
+            <div class="card-content">
+                <h3>Comfortable Patient Rooms</h3>
+                <p>Our patient rooms are designed for comfort and privacy, ensuring a pleasant stay during your treatment.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6_CQOpItwU6spYbBUbmMXh0WZSEo4Jw-wTw&s" alt="Facility 3">
+            <div class="card-content">
+                <h3>24/7 Emergency Services</h3>
+                <p>Our emergency services are available around the clock to provide immediate care when you need it most.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<%- include('partials/footer') %>
+
+<style>
+
+.carousel-inner img {
+        height: 600px; /* Adjust height as needed */
+        object-fit: cover;
+    }
+    
+    .carousel-caption {
+        background-color: rgba(0, 0, 0, 0.5); /* Dark background for text readability */
+        padding: 15px;
+        border-radius: 8px;
+    }
+    
+/* About Us Section */
+.about-us-section {
+    padding: 40px 20px;
+    background-color: #f6d7d7;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+.about-us-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #007bff;
+}
+
+.about-us-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+}
+
+.about-us-image {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-us-text {
+    flex: 1;
+}
+
+.about-us-text h3 {
+    font-size: 2em;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.about-us-text p {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.6;
+}
+</style>

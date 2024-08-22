@@ -1,0 +1,243 @@
+<%- include('partials/header') %>
+
+<style>
+/* Treatment Section */
+.treatments-section {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+.treatments-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #007bff;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    background-color: #f4e0e0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: calc(50% - 20px);
+    max-width: 500px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    margin: 10px;
+    padding: 15px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h3 {
+    font-size: 1.8em;
+    margin: 15px 0;
+    color: #333;
+}
+
+.card-content p {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Details Toggle */
+.details {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    border-top: 1px solid #ddd;
+    background-color: #f4f4f4;
+}
+
+.details p {
+    font-size: 0.9em;
+    color: #666;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: calc(100% - 20px);
+    }
+    
+    .card-content h3 {
+        font-size: 1.5em;
+    }
+
+    .card-content p {
+        font-size: 0.9em;
+    }
+}
+</style>
+
+<div class="treatments-section">
+    <h2>Our Treatments</h2>
+    <div class="card-container">
+        
+        <!-- ICU Facility Card -->
+        <div class="card">
+            <div class="card-content">
+                <h3>ICU Facility</h3>
+                <p>State-of-the-art ICU facilities for critical care and advanced monitoring.</p>
+                <div id="icu-facility-details" class="details">
+                    <p>Our ICU facilities are equipped with the latest technology to provide intensive care for critically ill patients. Our team of specialists is dedicated to delivering high-quality, 24/7 care to ensure the best possible outcomes.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Knee Replacement Surgery Card -->
+        <div class="card">
+            <div class="card-content">
+                <h3>Knee Replacement Surgery</h3>
+                <p>Advanced techniques for knee replacement to restore mobility and alleviate pain.</p>
+                <div id="knee-replacement-details" class="details">
+                    <p>Our knee replacement surgeries are performed using cutting-edge technology to ensure optimal results. Our orthopedic surgeons provide personalized care to help you recover quickly and return to your daily activities with improved knee function.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Joint Replacement Surgery Card -->
+        <div class="card">
+            <div class="card-content">
+                <h3>Joint Replacement Surgery</h3>
+                <p>Expert care for replacing damaged joints with advanced prosthetics.</p>
+                <div id="joint-replacement-details" class="details">
+                    <p>We offer comprehensive joint replacement surgeries, including hip and shoulder replacements. Our skilled surgeons use the latest techniques to ensure a successful procedure and help you regain your quality of life.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Spine Surgery Card -->
+        <div class="card">
+            <div class="card-content">
+                <h3>Spine Surgery</h3>
+                <p>Advanced treatments for spine conditions, including minimally invasive options.</p>
+                <div id="spine-surgery-details" class="details">
+                    <p>Our spine surgeries address a variety of conditions, including herniated discs and spinal stenosis. We use advanced techniques to minimize recovery time and improve outcomes, ensuring a return to optimal function.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Arthritis Treatment Card -->
+        <div class="card">
+            <div class="card-content">
+                <h3>Arthritis Treatment</h3>
+                <p>Comprehensive care for arthritis, including medication and physical therapy.</p>
+                <div id="arthritis-treatment-details" class="details">
+                    <p>We provide a range of treatments for arthritis, from medication to physical therapy. Our goal is to relieve pain, improve joint function, and enhance the quality of life for our patients.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Shoulder Replacement Surgery Card -->
+        <div class="card">
+            <div class="card-content">
+                <h3>Shoulder Replacement Surgery</h3>
+                <p>Expert shoulder replacement procedures to restore mobility and reduce pain.</p>
+                <div id="shoulder-replacement-details" class="details">
+                    <p>Our shoulder replacement surgeries are designed to alleviate pain and improve mobility. We use advanced techniques to ensure the best outcomes and help you return to your daily activities with restored shoulder function.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trauma and Accidental Surgery Card -->
+        <div class="card">
+            <div class="card-content">
+                <h3>Trauma and Accidental Surgery</h3>
+                <p>Emergency surgeries for trauma and accidental injuries with expert care.</p>
+                <div id="trauma-surgery-details" class="details">
+                    <p>We provide prompt and effective surgical care for trauma and accidental injuries. Our experienced team is equipped to handle a variety of emergency situations and ensure the best possible recovery.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Full Body Checkup Card -->
+        <div class="card">
+            <div class="card-content">
+                <h3>Full Body Checkup</h3>
+                <p>Comprehensive health checkups to assess overall well-being and detect potential issues early.</p>
+                <div id="full-body-checkup-details" class="details">
+                    <p>Our full body checkups include a thorough examination of your health status. We offer a range of tests and screenings to identify any health issues early and provide recommendations for maintaining optimal health.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2D Echo Card -->
+        <div class="card">
+            <div class="card-content">
+                <h3>2D Echo</h3>
+                <p>Advanced echocardiography for detailed heart imaging and diagnostics.</p>
+                <div id="2d-echo-details" class="details">
+                    <p>Our 2D echo services provide detailed imaging of the heart, allowing for accurate diagnosis and monitoring of heart conditions. This non-invasive procedure helps in assessing heart function and structure.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- BP and Heart Related Problems Card -->
+        <div class="card">
+            <div class="card-content">
+                <h3>BP and Heart Related Problems</h3>
+                <p>Diagnosis and treatment for blood pressure and other heart-related issues.</p>
+                <div id="bp-heart-problems-details" class="details">
+                    <p>We offer comprehensive care for blood pressure and heart-related problems. Our services include diagnosis, treatment, and management of various cardiovascular conditions to help you maintain heart health.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fever and Cough Card -->
+        <div class="card">
+            <div class="card-content">
+                <h3>Fever and Cough</h3>
+                <p>Diagnosis and treatment for fever and persistent cough symptoms.</p>
+                <div id="fever-cough-details" class="details">
+                    <p>Our medical team provides effective treatment for fever and cough. We offer thorough evaluations and tailored treatment plans to address the underlying causes and provide relief from symptoms.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lungs Related Problems Card -->
+        <div class="card">
+            <div class="card-content">
+                <h3>Lungs Related Problems</h3>
+                <p>Comprehensive care for respiratory and lung-related conditions.</p>
+                <div id="lungs-problems-details" class="details">
+                    <p>We provide specialized care for various lung conditions, including asthma, chronic obstructive pulmonary disease (COPD), and infections. Our goal is to improve lung function and overall respiratory health.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Liver & Kidney Related Treatment Card -->
+        <div class="card">
+            <div class="card-content">
+                <h3>Liver & Kidney Related Treatment</h3>
+                <p>Expert care for liver and kidney conditions, including diagnostic and therapeutic services.</p>
+                <div id="liver-kidney-details" class="details">
+                    <p>Our clinic offers comprehensive treatment for liver and kidney conditions. We provide diagnostic services, medical management, and specialized treatments to address various disorders affecting these vital organs.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<%- include('partials/footer') %>

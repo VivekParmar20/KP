@@ -1,0 +1,363 @@
+/* Base styles */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+header {
+    background-color: #007bff; /* Match footer background color */
+    padding: 15px 0; /* Increase top and bottom padding for height */
+    color: #fff; /* White text color for contrast */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
+
+.navbar {
+    padding: 0; /* Reset default padding */
+    display: flex;
+    justify-content: space-between; /* Align brand and nav items */
+    align-items: center;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-nav .nav-item {
+    margin: 0 15px; /* Space between navigation items */
+}
+
+.nav-link {
+    font-size: 16px; /* Adjust font size for readability */
+    color: #d2c5c5 !important; /* White color for nav links */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #d1e7dd !important; /* Light color on hover */
+}
+
+.navbar-brand {
+    font-size: 24px; /* Increase brand font size */
+    color: #fff; /* White color for brand */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Bold for emphasis */
+}
+
+.navbar-brand:hover {
+    color: #d1e7dd; /* Light color on hover */
+}
+
+.container {
+    flex: 1;
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+footer {
+    background-color: #007bff; /* Background color */
+    color: #fff; /* Text color */
+    padding: 20px 0; /* Increased padding for height */
+    text-align: center;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-info {
+    margin-bottom: 10px;
+}
+
+.footer-info p {
+    margin: 5px 0;
+}
+
+.footer-info a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-info a:hover {
+    color: #d1e7dd;
+}
+
+.footer-location {
+    margin-top: 10px;
+}
+
+.btn-primary {
+    background-color: #28a745; /* Button color */
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #218838; /* Darker button color on hover */
+}
+
+/* Appointment section */
+#appointment {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+#appointment h1 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #007bff;
+}
+
+#appointment form {
+    display: flex;
+    flex-direction: column;
+}
+
+#appointment form input, 
+#appointment form select, 
+#appointment form button {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#appointment form input:focus, 
+#appointment form select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+#appointment form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+#appointment form button:hover {
+    background-color: #0056b3;
+}
+
+main {
+    flex-grow: 1;
+}
+
+/* Hero Section */
+.hero-section {
+    background: url('/images/hero-bg.jpg') no-repeat center center;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero-section h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    background-color: #28a745;
+    color: #fff;
+    padding: 15px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 10px;
+    display: inline-block;
+}
+
+.cta-button:hover {
+    background-color: #218838;
+}
+
+/* Card Sections */
+.features-section, .facilities-section, .treatments-section {
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    background-color: #f6e1e1;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: calc(33.333% - 20px);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h3 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.card-content p {
+    font-size: 1em;
+    color: #555;
+}
+
+/* Detailed Sections (Hidden Initially) */
+.details-section {
+    display: none;
+    background-color: #f6e1e1;
+    padding: 15px;
+    margin: 20px 0;
+    border-left: 4px solid #007bff;
+    border-radius: 5px;
+}
+
+.details-section h3 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+.details-section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.details-section li {
+    font-size: 1em;
+    margin: 5px 0;
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+    .card {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+    
+    header h1 {
+        font-size: 1.5rem;
+    }
+    
+    nav ul {
+        flex-direction: column;
+    }
+    
+    nav ul li {
+        margin: 10px 0;
+    }
+    
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .nav-item {
+        margin: 10px 0; /* Adjust margin for mobile view */
+    }
+
+    .hero-section h1 {
+        font-size: 2em;
+    }
+
+    .hero-section p {
+        font-size: 1.2em;
+    }
+
+    .cta-button {
+        padding: 12px 20px;
+        font-size: 0.9em;
+    }
+
+    .card {
+        width: calc(100% - 20px);
+    }
+
+    .card-content h3 {
+        font-size: 1.2em;
+    }
+
+    .card-content p {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        padding: 40px 10px;
+    }
+    
+    .hero-section h1 {
+        font-size: 1.8em;
+    }
+
+    .hero-section p {
+        font-size: 1em;
+    }
+
+    .cta-button {
+        padding: 10px 15px;
+        font-size: 0.8em;
+    }
+}
+.vi{
+    background-color: #007bff !important;
+}
