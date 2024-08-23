@@ -19,9 +19,12 @@ const isWeekend = (date) => {
 router.get('/', (req, res) => {
     res.render('appointment', {
         title: 'Book an Appointment',
-        doctors: doctors
+        doctors: doctors,
+        success_msg: req.flash('success_msg'),
+        error_msg: req.flash('error_msg')
     });
 });
+
 
 // Route for handling form submission (POST)
 router.post('/', async (req, res) => {

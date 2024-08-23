@@ -55,31 +55,38 @@
         padding: 10px;
         margin-bottom: 20px;
         border-radius: 5px;
-        background-color: #f8d7da;
-        color: #721c24;
-        border: 1px solid #f5c6cb;
+        border: 1px solid;
         display: none;
     }
 
     .appointment-form-container .alert.success {
         background-color: #d4edda;
         color: #155724;
-        border: 1px solid #c3e6cb;
+        border-color: #c3e6cb;
     }
 
     .appointment-form-container .alert.error {
         background-color: #f8d7da;
         color: #721c24;
-        border: 1px solid #f5c6cb;
+        border-color: #f5c6cb;
     }
 </style>
 
 <div class="appointment-form-container">
     <h1><%= title %></h1>
-    <form action="/appointment" method="POST" onsubmit="validateForm(event)">
+    
+    <!-- Display flash messages -->
+    <% if (success_msg) { %>
+        <div class="alert success"><%= success_msg %></div>
+    <% } %>
+    <% if (error_msg) { %>
+        <div class="alert error"><%= error_msg %></div>
+    <% } %>
+
+    <form action="/appointment" method="POST" id="appointment-form">
         <input type="text" name="name" placeholder="Name" required>
         <input type="email" name="email" placeholder="Email" required>
-        <input type="text" name="phone" placeholder="Phone" required>
+        <input type="text" name="phone" id="phone" placeholder="Phone" required>
         <select name="doctor" required>
             <% doctors.forEach(function(doc) { %>
                 <option value="<%= doc.name %>"><%= doc.name %> - <%= doc.specialty %></option>
@@ -87,23 +94,23 @@
         </select>
         <input type="date" name="date" id="appointment-date" required>
         <button type="submit">Book Appointment</button>
-        <div class="alert success" id="success-message">Appointment booked successfully!</div>
-        <div class="alert error" id="error-message"></div>
     </form>
 </div>
 
 <script>
-    function validateForm(event) {
+    document.getElementById('appointment-form').addEventListener('submit', function (event) {
         const dateInput = document.getElementById('appointment-date');
+        const phoneInput = document.getElementById('phone');
         const selectedDate = new Date(dateInput.value);
         const today = new Date();
-        
+
         // Remove time part from date
         selectedDate.setHours(0, 0, 0, 0);
         today.setHours(0, 0, 0, 0);
 
+        // Check if the date is in the past
         if (selectedDate < today) {
-            showAlert('error-message', 'Invalid date: Appointment cannot be in the past.');
+            showAlert('error', 'Invalid date: Appointment cannot be in the past.');
             event.preventDefault(); // Prevent form submission
             return;
         }
@@ -111,14 +118,21 @@
         // Check if the date falls on a weekend
         const day = selectedDate.getDay();
         if (day === 0 || day === 6) {
-            showAlert('error-message', 'Invalid date: Appointments cannot be booked on weekends.');
+            showAlert('error', 'Invalid date: Appointments cannot be booked on weekends.');
             event.preventDefault(); // Prevent form submission
             return;
         }
-    }
 
-    function showAlert(elementId, message) {
-        const alertElement = document.getElementById(elementId);
+        // Validate phone number format
+        if (!/^\d{10}$/.test(phoneInput.value)) {
+            showAlert('error', 'Invalid phone number: Must be exactly 10 digits.');
+            event.preventDefault(); // Prevent form submission
+            return;
+        }
+    });
+
+    function showAlert(type, message) {
+        const alertElement = document.querySelector(`.alert.${type}`);
         alertElement.textContent = message;
         alertElement.style.display = 'block';
     }

@@ -4,11 +4,9 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const passport = require('passport');
 const flash = require('connect-flash');
-const bodyParser = require('body-parser');
 const path = require('path'); // Import path module
 
 const appointmentRoutes = require('./routes/appointment');
-
 const indexRoutes = require('./routes/index');
 
 const app = express();
@@ -20,8 +18,8 @@ app.set('views', path.join(__dirname, 'views')); // Set path to views directory
 // Serve static files from 'public' directory
 app.use(express.static(path.join(__dirname, 'public'))); // Use path.join for serving static files
 
-// Body parser middleware
-app.use(bodyParser.urlencoded({ extended: true }));
+// Body parser middleware (using built-in Express middleware)
+app.use(express.urlencoded({ extended: true }));
 
 // MongoDB connection
 mongoose.connect(process.env.MONGODB_URI, {
@@ -37,22 +35,32 @@ mongoose.connect(process.env.MONGODB_URI, {
 app.use(session({
     secret: process.env.SECRET,
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: true,
+    cookie: { secure: process.env.NODE_ENV === 'production' } // Use secure cookies in production
 }));
 
+app.use(flash());
 
-
- 
-app.get('/treatments', (req, res) => {
-    res.render('treatment'); // Adjust path if necessary
+// Middleware to pass flash messages to EJS templates
+app.use((req, res, next) => {
+    res.locals.success_msg = req.flash('success_msg');
+    res.locals.error_msg = req.flash('error_msg');
+    next();
 });
-
 
 // Routes
 app.use('/', indexRoutes);
 app.use('/appointment', appointmentRoutes);
-app.use("*",(req,res)=>{
-    res.send("Path not found");
+
+// Catch-all route for undefined paths
+app.use('*', (req, res) => {
+    res.status(404).send("Path not found");
+});
+
+// Global error handler
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Something went wrong!');
 });
 
 // Start server
