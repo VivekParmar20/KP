@@ -51,6 +51,10 @@ app.use((req, res, next) => {
 // Routes
 app.use('/', indexRoutes);
 app.use('/appointment', appointmentRoutes);
+app.get('/treatments', (req, res) => {
+    res.render('treatment'); // Ensure the filename matches exactly
+});
+
 
 // Catch-all route for undefined paths
 app.use('*', (req, res) => {
