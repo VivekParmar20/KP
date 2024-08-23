@@ -55,6 +55,9 @@ app.get('/treatments', (req, res) => {
     res.render('treatment'); // Ensure the filename matches exactly
 });
 
+const cors = require('cors');
+app.use(cors());
+
 
 // Catch-all route for undefined paths
 app.use('*', (req, res) => {
